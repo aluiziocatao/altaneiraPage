@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTANEIRA - Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex flex-col h-screen">
+    <!-- Cabeçalho -->
+    <header class="p-6 bg-gray-800 text-center text-2xl font-bold">
+        ALTANEIRA - Inteligência Artificial
+    </header>
+
+    <!-- Área de Chat -->
+    <main class="flex-1 overflow-y-auto p-6 space-y-4">
+        <div id="chatBox" class="space-y-4"></div>
+    </main>
+
+    <!-- Entrada de Texto -->
+    <footer class="p-4 bg-gray-800 flex items-center">
+        <input 
+            type="text" 
+            id="userInput" 
+            placeholder="Digite sua pergunta..." 
+            class="flex-1 px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring focus:ring-blue-500"
+        >
+        <button 
+            id="sendBtn" 
+            class="ml-4 px-6 py-2 bg-blue-500 rounded-lg hover:bg-blue-600"
+        >
+            Enviar
+        </button>
+    </footer>
+
+    <script>
+        document.getElementById("sendBtn").addEventListener("click", function() {
+            let input = document.getElementById("userInput");
+            let chatBox = document.getElementById("chatBox");
+
+            if (input.value.trim() !== "") {
+                let userMessage = `<div class="bg-blue-500 p-3 rounded-lg max-w-md self-end">${input.value}</div>`;
+                let botMessage = `<div class="bg-gray-700 p-3 rounded-lg max-w-md self-start">ALTANEIRA está processando...</div>`;
+
+                chatBox.innerHTML += `<div class="flex flex-col space-y-2">${userMessage}${botMessage}</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+                
+                input.value = "";
+            }
+        });
+    </script>
+</body>
+</html>
