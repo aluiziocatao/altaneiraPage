@@ -6,18 +6,31 @@
     <title>Login - ALTANEIRA</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="h-screen flex flex-col items-center justify-center bg-gray-900 text-white">
-    <h1 class="text-3xl font-bold mb-4">Bem-vindo à ALTANEIRA</h1>
-    <p class="text-lg text-gray-300 mb-6">Faça login para acessar a IA</p>
+<body class="h-screen flex">
 
-    <button id="googleLogin" class="px-6 py-3 bg-red-500 rounded text-lg hover:bg-red-600">
-        Entrar com Google
-    </button>
+    <!-- Lado esquerdo: Logo + Descrição -->
+    <div class="w-1/2 flex flex-col items-center justify-center bg-gray-800 text-white p-8">
+        <img src="images/logoSFundo.png" alt="Logo ALTANEIRA" class="w-80 h-80 mb-6"> 
+        
+        <p class="text-lg text-gray-300 text-center max-w-md">
+            ALTANEIRA é uma Inteligência Artificial poderosa que auxilia você na criação de textos, respostas inteligentes e muito mais.
+        </p>
+    </div>
 
-    <script>
-        document.getElementById('googleLogin').addEventListener('click', function() {
-            alert("Aqui seria a integração com o login do Google.");
-        });
-    </script>
+    <!-- Lado direito: Login -->
+    <div class="w-1/2 flex flex-col items-center justify-center bg-gray-900 text-white p-8">
+        <h1 class="text-3xl font-bold mb-4">Bem-vindo à ALTANEIRA</h1>
+        <p class="text-lg text-gray-300 mb-6">Faça login para acessar a IA</p>
+
+        <a href="chat.html" class="px-6 py-3 bg-red-500 rounded-lg text-lg hover:bg-red-600">
+            Entrar com Google
+        </a>
+        <!-- id="googleLogin" -->
+        <script>
+            document.getElementById('googleLogin').addEventListener('click', function() {
+                alert("Aqui seria a integração com o login do Google.");
+            });
+        </script>
+    </div>
 </body>
 </html>
